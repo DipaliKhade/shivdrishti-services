@@ -133,13 +133,12 @@
 
 <section id="quote">
 <h2>Request a Quote</h2>
-<form>
- <form action="https://formspree.io/f/mpwvnywb" method="POST">  
-  <input type="text" name="name" placeholder="Your Name" required>
-  <input type="email" name="email" placeholder="Email Address" required>
-  <input type="text" name="phone" placeholder="Phone Number" required>
-  <textarea name="message" rows="5" placeholder="Describe your requirement"></textarea>
-  <button type="submit">Submit Request</button>
+<form onsubmit="sendWhatsApp(); return false;">
+  <input type="text" id="name" placeholder="Your Name" required>
+  <input type="text" id="phone" placeholder="Phone Number" required>
+  <input type="email" id="email" placeholder="Email Address">
+  <textarea id="message" rows="5" placeholder="Describe your requirement"></textarea>
+  <button type="submit">Send on WhatsApp</button>
 </form>
 </section>
 
@@ -155,7 +154,29 @@ Location: Tathawade, Pune
 <a class="whatsapp" href="https://wa.me/919595353496" target="_blank">💬</a>
 
 <footer>© 2025 Shivdrishti Services</footer>
+  <script>
+function sendWhatsApp() {
+  var name = document.getElementById("name").value;
+  var phone = document.getElementById("phone").value;
+  var email = document.getElementById("email").value;
+  var message = document.getElementById("message").value;
+
+  var whatsappNumber = "919595353496"; // YOUR NUMBER
+
+  var text =
+    "New Enquiry from Website%0A%0A" +
+    "Name: " + name + "%0A" +
+    "Phone: " + phone + "%0A" +
+    "Email: " + email + "%0A%0A" +
+    "Requirement:%0A" + message;
+
+  var url = "https://wa.me/" + whatsappNumber + "?text=" + text;
+  window.open(url, "_blank");
+}
+</script>
+
 
 </body>
 </html>
+
 
