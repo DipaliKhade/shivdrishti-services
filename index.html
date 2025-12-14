@@ -134,11 +134,12 @@
 <section id="quote">
 <h2>Request a Quote</h2>
 <form>
-  <input type="text" placeholder="Your Name" required>
-  <input type="email" placeholder="Email Address" required>
-  <input type="text" placeholder="Phone Number" required>
-  <textarea rows="5" placeholder="Describe your requirement"></textarea>
-  <button type="submit">Submit</button>
+ <form action="https://formspree.io/f/mpwvnywb" method="POST">  
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Email Address" required>
+  <input type="text" name="phone" placeholder="Phone Number" required>
+  <textarea name="message" rows="5" placeholder="Describe your requirement"></textarea>
+  <button type="submit">Submit Request</button>
 </form>
 </section>
 
@@ -157,3 +158,4 @@ Location: Tathawade, Pune
 
 </body>
 </html>
+
